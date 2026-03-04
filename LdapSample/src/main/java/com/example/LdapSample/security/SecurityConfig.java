@@ -80,12 +80,13 @@ public class SecurityConfig extends WebSecurityConfiguration{
                 }
             }
 //            chain.doFilter(request, response);
-            Chai
+            
         }
 
 		@Override
 		protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
 				FilterChain filterChain) throws ServletException, IOException {
+			System.out.println("+++++++++++++++++++++++++++++++");
 			// TODO Auto-generated method stub
 			
 		}			
