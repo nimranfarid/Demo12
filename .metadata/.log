@@ -243,6 +243,7 @@ Java Model Exception: Error in Java Model (code 969): LDAPAuth does not exist
 !SUBENTRY 1 org.eclipse.jdt.core 4 969 2026-03-04 15:57:44.920
 !MESSAGE LDAPAuth does not exist
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.core 2 0 2026-03-04 17:44:26.277
 !MESSAGE Java Index broken - will be automatically deleted to repair: file:/home/nimranfarid/Applications/Git/.metadata/.plugins/org.eclipse.jdt.core/1865797976.index
 !STACK 0
@@ -270,3 +271,21 @@ java.lang.InterruptedException
 	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
 	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
 	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+=======
+!ENTRY org.springframework.tooling.boot.ls 1 0 2026-03-04 17:10:23.572
+!MESSAGE Classpath changed for project: LdapSample
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2026-03-04 17:10:23.573
+!MESSAGE Boot project ADDED: LdapSample
+
+!ENTRY org.tigris.subversion.clientadapter.javahl 1 0 2026-03-04 17:10:23.585
+!MESSAGE Failed to load JavaHL Library.
+These are the errors that were encountered:
+no libsvnjavahl-1 in java.library.path: /usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+no svnjavahl-1 in java.library.path: /usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+no svnjavahl in java.library.path: /usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+java.library.path = /usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2026-03-04 17:10:25.511
+!MESSAGE Classpath changed for project: LdapSample
+>>>>>>> Demo

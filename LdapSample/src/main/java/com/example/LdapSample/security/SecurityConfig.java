@@ -80,6 +80,7 @@ public class SecurityConfig extends WebSecurityConfiguration{
                 }
             }
 //            chain.doFilter(request, response);
+<<<<<<< HEAD
             
         }
 
@@ -90,6 +91,11 @@ public class SecurityConfig extends WebSecurityConfiguration{
 			// TODO Auto-generated method stub
 			
 		}			
+=======
+        }
+
+		
+>>>>>>> Demo
 		}
 }
 
