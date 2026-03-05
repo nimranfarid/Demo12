@@ -29,74 +29,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfiguration{
 
-	private final String JWT_SECRET = "TestSecretKey";
-    private final long JWT_EXPIRATION = 86400000L; // 24 hours
-    
-    
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-            .ldapAuthentication()
-            .userDnPatterns("uid={0},ou=people")
-            .groupSearchBase("ou=groups")
-            .contextSource()
-            .url("ldap://localhost:8389/dc=example,dc=com")
-            .managerDn("uid=admin,ou=system")
-            .managerPassword("secret");
-    }
-    
-  
-    public String generateToken(Authentication auth) {
-        return Jwts.builder()
-                .setSubject(auth.getName())
-                .claim("authorities", auth.getAuthorities().stream()
-                        .map(role -> role.getAuthority())
-                        .collect(Collectors.toList()))
-                .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + JWT_EXPIRATION))
-                .signWith(SignatureAlgorithm.HS512, JWT_SECRET)
-                .compact();
-    }
-    class JwtAuthenticationFilter extends OncePerRequestFilter {
-
-        private AuthenticationManager authManager;
-
-        public JwtAuthenticationFilter(AuthenticationManager authManager) {
-            this.authManager = authManager;
-        }
-
-
-			String token = request.getHeader("Authorization");
-            if (token != null && token.startsWith("Bearer ")) {
-                token = token.substring(7);
-                String username = Jwts.parser()
-                        .setSigningKey(JWT_SECRET)
-                        .parseClaimsJws(token)
-                        .getBody()
-                        .getSubject();
-
-                if (username != null) {
-                    UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(username, null, List.of());
-                    SecurityContextHolder.getContext().setAuthentication(auth);
-                }
-            }
-//            chain.doFilter(request, response);
-<<<<<<< HEAD
-            
-        }
-
-		@Override
-		protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
-				FilterChain filterChain) throws ServletException, IOException {
-			System.out.println("+++++++++++++++++++++++++++++++");
-			// TODO Auto-generated method stub
-			
-		}			
-=======
-        }
-
-		
->>>>>>> Demo
-		}
+	
 }
 
 
